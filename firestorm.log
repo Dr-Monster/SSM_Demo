@@ -1,0 +1,186 @@
+DEBUG main org.springframework.beans.factory.xml.PluggableSchemaResolver - Found XML schema [http://www.springframework.org/schema/beans/spring-beans.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-4.0.xsd
+DEBUG main org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader - Loading bean definitions
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'processEngineConfiguration'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'processEngineConfiguration'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'processEngineConfiguration' to allow for resolving potential circular references
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'processEngineConfiguration'
+DEBUG main org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl - initializing datasource to db: jdbc:mysql://localhost:3306/activity_test
+DEBUG main org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Created connection 1603421486.
+DEBUG main org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl - database product name: 'MySQL'
+DEBUG main org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl - using database type: mysql
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1603421486 to pool.
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- starting SchemaOperationsProcessEngineBuild --------------------------------------------------------
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Checked out connection 1603421486 from pool.
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5f92452e]
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - ==> Parameters: schema.version(String)
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - <==      Total: 1
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - flush summary: 0 insert, 0 update, 0 delete.
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - now executing flush...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committing...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - committing the ibatis sql session...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committed...
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5f92452e]
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@5f92452e]
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1603421486 to pool.
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- SchemaOperationsProcessEngineBuild finished --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+INFO main org.activiti.engine.ProcessEngines - initialised process engine default
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- starting ProcessDefinitionQueryImpl --------------------------------------------------------
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Checked out connection 1603421486 from pool.
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5f92452e]
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.selectProcessDefinitionsByQueryCriteria_mysql - ==>  Preparing: select distinct RES.* from ACT_RE_PROCDEF RES order by RES.VERSION_ desc LIMIT ? OFFSET ? 
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.selectProcessDefinitionsByQueryCriteria_mysql - ==> Parameters: 2147483647(Integer), 0(Integer)
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.selectProcessDefinitionsByQueryCriteria_mysql - <==      Total: 2
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - flush summary: 0 insert, 0 update, 0 delete.
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - now executing flush...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committing...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - committing the ibatis sql session...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committed...
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@5f92452e]
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@5f92452e]
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1603421486 to pool.
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- ProcessDefinitionQueryImpl finished --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+INFO main org.activiti.engine.ProcessEngines - Initializing process engine using configuration 'file:/F:/IdeaWorkSpace/SSM_Demo/target/classes/activiti.cfg.xml'
+INFO main org.activiti.engine.ProcessEngines - initializing process engine for resource file:/F:/IdeaWorkSpace/SSM_Demo/target/classes/activiti.cfg.xml
+DEBUG main org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+DEBUG main org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+DEBUG main org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+INFO main org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from resource loaded through InputStream
+DEBUG main org.springframework.beans.factory.xml.DefaultDocumentLoader - Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+DEBUG main org.springframework.beans.factory.xml.PluggableSchemaResolver - Loading schema mappings from [META-INF/spring.schemas]
+DEBUG main org.springframework.beans.factory.xml.PluggableSchemaResolver - Loaded schema mappings: {http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/security/spring-security-3.0.3.xsd=org/springframework/security/config/spring-security-3.0.3.xsd, http://www.springframework.org/schema/security/spring-security-2.0.1.xsd=org/springframework/security/config/spring-security-2.0.1.xsd, http://mybatis.org/schema/mybatis-spring-1.2.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.2.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-4.0.xsd, http://www.springframework.org/schema/context/spring-context-4.0.xsd=org/springframework/context/config/spring-context-4.0.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd=org/springframework/web/servlet/config/spring-mvc-3.2.xsd, http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd=org/springframework/oxm/config/spring-oxm-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.2.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/cache/spring-cache-3.2.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.2.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-4.0.xsd, http://www.springframework.org/schema/aop/spring-aop-4.0.xsd=org/springframework/aop/config/spring-aop-4.0.xsd, http://www.springframework.org/schema/security/spring-security-2.0.xsd=org/springframework/security/config/spring-security-2.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.2.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd=org/springframework/jdbc/config/spring-jdbc-4.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd=org/springframework/web/servlet/config/spring-mvc-4.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.2.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-4.0.xsd=org/springframework/scripting/config/spring-lang-4.0.xsd, http://www.springframework.org/schema/mvc/spring-mvc.xsd=org/springframework/web/servlet/config/spring-mvc-4.0.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd=org/springframework/web/servlet/config/spring-mvc-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-4.0.xsd=org/springframework/beans/factory/xml/spring-tool-4.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-3.2.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-4.0.xsd=org/springframework/ejb/config/spring-jee-4.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-4.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-4.0.xsd=org/springframework/cache/config/spring-cache-4.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/task/spring-task-3.2.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-4.0.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd=org/springframework/web/servlet/config/spring-mvc-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-4.0.xsd=org/springframework/beans/factory/xml/spring-beans-4.0.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-4.0.xsd, http://www.springframework.org/schema/security/spring-security-2.0.4.xsd=org/springframework/security/config/spring-security-2.0.4.xsd, http://mybatis.org/schema/mybatis-spring.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/task/spring-task-4.0.xsd=org/springframework/scheduling/config/spring-task-4.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-4.0.xsd=org/springframework/transaction/config/spring-tx-4.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/security/spring-security-3.2.xsd=org/springframework/security/config/spring-security-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-4.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/oxm/spring-oxm.xsd=org/springframework/oxm/config/spring-oxm-4.0.xsd, http://www.springframework.org/schema/util/spring-util-3.2.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-4.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/oxm/spring-oxm-3.2.xsd=org/springframework/oxm/config/spring-oxm-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/security/spring-security-3.1.xsd=org/springframework/security/config/spring-security-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/util/spring-util-4.0.xsd=org/springframework/beans/factory/xml/spring-util-4.0.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-4.0.xsd, http://www.springframework.org/schema/context/spring-context-3.2.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/oxm/spring-oxm-4.0.xsd=org/springframework/oxm/config/spring-oxm-4.0.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-4.0.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-4.0.xsd, http://www.springframework.org/schema/security/spring-security-2.0.2.xsd=org/springframework/security/config/spring-security-2.0.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd, http://www.springframework.org/schema/oxm/spring-oxm-3.1.xsd=org/springframework/oxm/config/spring-oxm-3.1.xsd, http://www.springframework.org/schema/security/spring-security.xsd=org/springframework/security/config/spring-security-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.alibaba.com/schema/stat.xsd=META-INF/stat.xsd, http://www.springframework.org/schema/security/spring-security-3.0.xsd=org/springframework/security/config/spring-security-3.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-4.0.xsd}
+DEBUG main org.springframework.beans.factory.xml.PluggableSchemaResolver - Found XML schema [http://www.springframework.org/schema/beans/spring-beans.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-4.0.xsd
+DEBUG main org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader - Loading bean definitions
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'processEngineConfiguration'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'processEngineConfiguration'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'processEngineConfiguration' to allow for resolving potential circular references
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'processEngineConfiguration'
+DEBUG main org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl - initializing datasource to db: jdbc:mysql://localhost:3306/activity_test
+DEBUG main org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Created connection 1439732584.
+DEBUG main org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl - database product name: 'MySQL'
+DEBUG main org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl - using database type: mysql
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1439732584 to pool.
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- starting SchemaOperationsProcessEngineBuild --------------------------------------------------------
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Checked out connection 1439732584 from pool.
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - ==> Parameters: schema.version(String)
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - <==      Total: 1
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - flush summary: 0 insert, 0 update, 0 delete.
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - now executing flush...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committing...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - committing the ibatis sql session...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committed...
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1439732584 to pool.
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- SchemaOperationsProcessEngineBuild finished --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+INFO main org.activiti.engine.impl.ProcessEngineImpl - ProcessEngine default created
+INFO main org.activiti.engine.ProcessEngines - initialised process engine default
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- starting DeployCmd --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- starting GetNextIdBlockCmd --------------------------------------------------------
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Checked out connection 1439732584 from pool.
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - ==>  Preparing: select * from ACT_GE_PROPERTY where NAME_ = ? 
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - ==> Parameters: next.dbid(String)
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.selectProperty - <==      Total: 1
+DEBUG main org.activiti.engine.impl.db.DbSqlSession -   update PropertyEntity[name=next.dbid, value=17501]
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - flush summary: 0 insert, 1 update, 0 delete.
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - now executing flush...
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - updating: PropertyEntity[name=next.dbid, value=17501]
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.updateProperty - ==>  Preparing: update ACT_GE_PROPERTY SET REV_ = ?, VALUE_ = ? where NAME_ = ? and REV_ = ? 
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.updateProperty - ==> Parameters: 8(Integer), 17501(String), next.dbid(String), 7(Integer)
+DEBUG main org.activiti.engine.impl.persistence.entity.PropertyEntity.updateProperty - <==    Updates: 1
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committing...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - committing the ibatis sql session...
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committed...
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1439732584 to pool.
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- GetNextIdBlockCmd finished --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing deployment ActDemo1
+INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource activity_workflow/ActivityTest.png
+INFO main org.activiti.engine.impl.bpmn.deployer.BpmnDeployer - Processing resource activity_workflow/ActivityTest.bpmn
+DEBUG main org.activiti.engine.impl.bpmn.parser.handler.ProcessParseHandler - Parsing process ActDemo1
+DEBUG main org.activiti.engine.impl.bpmn.parser.handler.AbstractBpmnParseHandler - Parsing activity _3
+DEBUG main org.activiti.engine.impl.bpmn.parser.handler.AbstractBpmnParseHandler - Parsing activity _12
+DEBUG main org.activiti.engine.impl.bpmn.parser.handler.AbstractBpmnParseHandler - Parsing activity _14
+DEBUG main org.activiti.engine.impl.bpmn.parser.handler.AbstractBpmnParseHandler - Parsing activity _2
+DEBUG main org.activiti.engine.impl.bpmn.parser.handler.AbstractBpmnParseHandler - Parsing activity _6
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Opening JDBC Connection
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Checked out connection 1439732584 from pool.
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.selectLatestProcessDefinitionByKey - ==>  Preparing: select * from ACT_RE_PROCDEF where KEY_ = ? and (TENANT_ID_ = '' or TENANT_ID_ is null) and VERSION_ = (select max(VERSION_) from ACT_RE_PROCDEF where KEY_ = ? and (TENANT_ID_ = '' or TENANT_ID_ is null)) 
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.selectLatestProcessDefinitionByKey - ==> Parameters: ActDemo1(String), ActDemo1(String)
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.selectLatestProcessDefinitionByKey - <==      Total: 1
+DEBUG main org.activiti.engine.impl.persistence.entity.JobEntity.selectJobByTypeAndProcessDefinitionKeyNoTenantId - ==>  Preparing: select J.* from ACT_RU_JOB J inner join ACT_RE_PROCDEF P on J.PROC_DEF_ID_ = P.ID_ where J.HANDLER_TYPE_ = ? and P.KEY_ = ? and (P.TENANT_ID_ = '' or P.TENANT_ID_ is null) 
+DEBUG main org.activiti.engine.impl.persistence.entity.JobEntity.selectJobByTypeAndProcessDefinitionKeyNoTenantId - ==> Parameters: timer-start-event(String), ActDemo1(String)
+DEBUG main org.activiti.engine.impl.persistence.entity.JobEntity.selectJobByTypeAndProcessDefinitionKeyNoTenantId - <==      Total: 0
+DEBUG main org.activiti.engine.impl.persistence.entity.EventSubscriptionEntity.selectEventSubscriptionsByTypeAndProcessDefinitionId - ==>  Preparing: select * from ACT_RU_EVENT_SUBSCR WHERE (EVENT_TYPE_ = ?) and PROC_DEF_ID_ = ? and EXECUTION_ID_ is null and PROC_INST_ID_ is null and (TENANT_ID_ = '' or TENANT_ID_ is null) 
+DEBUG main org.activiti.engine.impl.persistence.entity.EventSubscriptionEntity.selectEventSubscriptionsByTypeAndProcessDefinitionId - ==> Parameters: message(String), ActDemo1:1:4(String)
+DEBUG main org.activiti.engine.impl.persistence.entity.EventSubscriptionEntity.selectEventSubscriptionsByTypeAndProcessDefinitionId - <==      Total: 0
+DEBUG main org.activiti.engine.impl.persistence.entity.EventSubscriptionEntity.selectEventSubscriptionsByTypeAndProcessDefinitionId - ==>  Preparing: select * from ACT_RU_EVENT_SUBSCR WHERE (EVENT_TYPE_ = ?) and PROC_DEF_ID_ = ? and EXECUTION_ID_ is null and PROC_INST_ID_ is null and (TENANT_ID_ = '' or TENANT_ID_ is null) 
+DEBUG main org.activiti.engine.impl.persistence.entity.EventSubscriptionEntity.selectEventSubscriptionsByTypeAndProcessDefinitionId - ==> Parameters: signal(String), ActDemo1:1:4(String)
+DEBUG main org.activiti.engine.impl.persistence.entity.EventSubscriptionEntity.selectEventSubscriptionsByTypeAndProcessDefinitionId - <==      Total: 0
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- starting GetProcessDefinitionInfoCmd --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.CommandContextInterceptor - Valid context found. Reusing it for the current command 'org.activiti.engine.impl.cmd.GetProcessDefinitionInfoCmd'
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- GetProcessDefinitionInfoCmd finished --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+
+DEBUG main org.activiti.engine.impl.db.DbSqlSession -   insert ResourceEntity[id=15002, name=activity_workflow/ActivityTest.png]
+DEBUG main org.activiti.engine.impl.db.DbSqlSession -   insert ResourceEntity[id=15003, name=activity_workflow/ActivityTest.bpmn]
+DEBUG main org.activiti.engine.impl.db.DbSqlSession -   insert DeploymentEntity[id=15001, name=ActDemo1]
+DEBUG main org.activiti.engine.impl.db.DbSqlSession -   insert ProcessDefinitionEntity[ActDemo1:2:15004]
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - flush summary: 4 insert, 0 update, 0 delete.
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - now executing flush...
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - inserting: ProcessDefinitionEntity[ActDemo1:2:15004]
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.insertProcessDefinition - ==>  Preparing: insert into ACT_RE_PROCDEF(ID_, REV_, CATEGORY_, NAME_, KEY_, VERSION_, DEPLOYMENT_ID_, RESOURCE_NAME_, DGRM_RESOURCE_NAME_, DESCRIPTION_, HAS_START_FORM_KEY_, HAS_GRAPHICAL_NOTATION_ , SUSPENSION_STATE_, TENANT_ID_) values (?, 1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.insertProcessDefinition - ==> Parameters: ActDemo1:2:15004(String), http://www.activiti.org/testm1519870359772(String), Demo_Code_One(String), ActDemo1(String), 2(Integer), 15001(String), activity_workflow/ActivityTest.bpmn(String), activity_workflow/ActivityTest.png(String), null, false(Boolean), true(Boolean), 1(Integer), (String)
+DEBUG main org.activiti.engine.impl.persistence.entity.ProcessDefinitionEntity.insertProcessDefinition - <==    Updates: 1
+DEBUG main org.activiti.engine.impl.db.DbSqlSession - inserting: DeploymentEntity[id=15001, name=ActDemo1]
+DEBUG main org.activiti.engine.impl.persistence.entity.DeploymentEntity.insertDeployment - ==>  Preparing: insert into ACT_RE_DEPLOYMENT(ID_, NAME_, CATEGORY_, TENANT_ID_, DEPLOY_TIME_) values(?, ?, ?, ?, ?) 
+DEBUG main org.activiti.engine.impl.persistence.entity.DeploymentEntity.insertDeployment - ==> Parameters: 15001(String), ActDemo1(String), null, (String), 2018-03-13 13:44:17.131(Timestamp)
+DEBUG main org.activiti.engine.impl.persistence.entity.DeploymentEntity.insertDeployment - <==    Updates: 1
+DEBUG main org.activiti.engine.impl.persistence.entity.ResourceEntity.bulkInsertResource - ==>  Preparing: INSERT INTO ACT_GE_BYTEARRAY(ID_, REV_, NAME_, BYTES_, DEPLOYMENT_ID_, GENERATED_) VALUES (?, 1, ?, ?, ?, ?) , (?, 1, ?, ?, ?, ?) 
+DEBUG main org.activiti.engine.impl.persistence.entity.ResourceEntity.bulkInsertResource - ==> Parameters: 15002(String), activity_workflow/ActivityTest.png(String), java.io.ByteArrayInputStream@709afb23(ByteArrayInputStream), 15001(String), false(Boolean), 15003(String), activity_workflow/ActivityTest.bpmn(String), java.io.ByteArrayInputStream@4eddf096(ByteArrayInputStream), 15001(String), false(Boolean)
+DEBUG main org.activiti.engine.impl.persistence.entity.ResourceEntity.bulkInsertResource - <==    Updates: 2
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committing...
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - committing the ibatis sql session...
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.activiti.engine.impl.cfg.standalone.StandaloneMybatisTransactionContext - firing event committed...
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.apache.ibatis.transaction.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@55d09368]
+DEBUG main org.apache.ibatis.datasource.pooled.PooledDataSource - Returned connection 1439732584 to pool.
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - --- DeployCmd finished --------------------------------------------------------
+DEBUG main org.activiti.engine.impl.interceptor.LogInterceptor - 
+

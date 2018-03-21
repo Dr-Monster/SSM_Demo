@@ -1,5 +1,7 @@
 package com.actDemo.service.impl;
 
+import com.actDemo.entity.TempModeler;
+import com.actDemo.entity.TempTask;
 import com.actDemo.service.ActivitiActionSer;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngines;
@@ -68,22 +70,27 @@ public class ActivitiActionSerImpl implements ActivitiActionSer {
     }
 
     @Override
-    public ProcessInstance startAction(String actName) {
-        ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceByKey(actName);
+    public ProcessInstance startAction(String deID) {
+        ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceById(deID);
         return processInstance ;
     }
 
     @Override
-    public List<String> viewAction() {
+    public List<TempTask> viewAction() {
         List<Task> taskList = processEngine
                 .getTaskService()
                 .createTaskQuery()
                 .list();
-        List<String> taskIDList = new ArrayList<String>();
+        List<TempTask> tempTaskList = new ArrayList<TempTask>();
         for(Task task : taskList){
-            taskIDList.add(task.getId());
+            TempTask tempTask = new TempTask();
+            tempTask.settID(task.getId());
+            tempTask.settName(task.getName());
+            tempTask.setDeployID(task.getProcessDefinitionId());
+            tempTask.setDeployKey(task.getTaskDefinitionKey());
+            tempTaskList.add(tempTask);
         }
-        return taskIDList;
+        return tempTaskList;
     }
 
     @Override

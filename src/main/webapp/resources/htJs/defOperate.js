@@ -39,10 +39,8 @@ function freshDefinitionList(definitionData){
             '<td ' + 'id=deKey_' + deID + ' >' + definitionList[i].deKey + '</td>' +
             '<td>' +
             '<p hidden="hidden" ' + 'id=pngUrl_' + deID + '>' + definitionList[i].pngPath + '</p>' +
-            '<p hidden="hidden" ' +  'id=bpmnUrl_'+ deID + '>' + definitionList[i].bpmnPath + '</p>' +
-//            '<button ' + 'id=deDeploy_' + deID + ' type="button" class="btn btn-default" style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;">' +
-//            '部署' +
-//            '</button>' +
+            '<p hidden="hidden" ' + 'id=bpmnUrl_'+ deID + '>' + definitionList[i].bpmnPath + '</p>' +
+            '<p hidden="hidden" ' + 'id=deID_' + deID + '>' + definitionList[i].iD + '</p>' +
             '<button ' + 'id=deStart_' + deID + ' type="button" class="btn btn-default" style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;">' +
             '启动' +
             '</button>' +
@@ -61,12 +59,16 @@ function freshDefinitionList(definitionData){
 
 function freshTaskList(taskData) {
     var taskList = JSON.parse(taskData);
+    console.log(taskList);
     var taskStr = "" ;
     for (var i = 0 ; i < taskList.length ; i++){
-        var taskID = taskList[i];
+        var taskID = taskList[i].tID;
         taskStr +=
             '<tr>' +
             '<td ' + 'id=taskID_' + taskID + ' >' + taskID + '</td>' +
+            '<td ' + 'id=taskName_' + taskID + ' >' + taskList[i].tName + '</td>' +
+            '<td ' + 'id=taskKey_' + taskID + ' >' + taskList[i].deployKey + '</td>' +
+            '<td ' + 'id=taskDeID_' + taskID + ' >' + taskList[i].deployID + '</td>' +
             '<td>' +
             '<button ' + 'id=tButton_' + taskID + ' type="button" class="btn btn-default" style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;">' +
             '执行' +

@@ -1,5 +1,6 @@
 package com.actDemo.service;
 
+import com.actDemo.entity.TempTask;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
@@ -21,7 +22,7 @@ public interface ActivitiActionSer {
 
     ProcessInstance startAction(String actName);
 
-    List<String> viewAction();
+    List<TempTask> viewAction();
 
     String executeAction(String taskID);
 }

@@ -76,8 +76,11 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th class="col-md-4">ID</th>
-                            <th class="col-md-3">操作</th>
+                            <th class="col-md-3">任务ID</th>
+                            <th class="col-md-3">节点名称</th>
+                            <th class="col-md-2">任务关键字</th>
+                            <th class="col-lg-3">所属流程</th>
+                            <th class="col-md-1">操作</th>
                         </tr>
                         </thead>
                         <tbody id="taskList">
@@ -91,8 +94,7 @@
 
 
 </body>
-
-<%--定义列表--%>
+<%-- 加载页面 --%>
 <script>
     freshModelList('${modelerList}');
     freshDefinitionList('${definitionList}');
@@ -102,74 +104,78 @@
 <script>
 
     //第二次加载的时候需要点击两次按钮,暂时不知道为什么,是不是这个里面的ajax也要重新去调用一下这个方法?
-    $(document).on("click", $("#actFileList").find("button"), function(){
-        $(this).find("#actFileList").find("button").click(
-            function () {
-                console.log(this);
-                var checkID = this.id.split("_")[1];
-                var checkType = this.id.split("_")[0];
-                var checkKey = $("#actFileList").find("#mKey_" + checkID).text();
-                if ("mDeploy" == checkType) {
-                    $.ajax(
-                        {
-                            url: "/Main/deployModeler?mDeID=" + checkID ,
-                            type: "post",
-                            async: true,
-                            dataType: "json",
-                            success: function () {
-                                alert("部署成功");
-                                $.ajax({
-                                    url:"/Main/definitionList",
-                                    type:"post",
-                                    async:true,
-                                    dataType:"json",
-                                    success:function (data) {
-                                        $("#definitionList").html("");
-                                        freshDefinitionList(JSON.stringify(data));
-                                    }
-                                });
-
-                                $.ajax({
-                                    url:"/Main/modelerList",
-                                    type:"post",
-                                    async:true,
-                                    dataType:"json",
-                                    success:function (data) {
-                                        $("#actFileList").html("");
-                                        freshModelList(JSON.stringify(data));
-                                    }
-                                });
-                            },
-                        }
-                    );
-                } else if ("mDelete" == checkType) {
-                    $.ajax(
-                        {
-                            url:"/Main/deleteDefinition?deployID=" + checkID ,
-                            type:"post",
-                            async:true,
-                            dataType:"json",
-                            success:function () {
-                                $.ajax(
-                                    {
-                                        url:"/Main/definitionList",
-                                        type:"post",
-                                        async:true,
-                                        dataType:"json",
-                                        success:function (data) {
-                                            freshDefinitionList(data)
-                                        }
-                                    }
-                                );
-                            },
-                        }
-                    );
-                } else {
-
-                }
-            }
-        );
-    });
+//    $(document).on("click", $("#actFileList").find("button"), function(){
+//        $(this).find("#actFileList").find("button").click(
+//            function () {
+//                console.log(this);
+//                var checkID = this.id.split("_")[1];
+//                var checkType = this.id.split("_")[0];
+//                var checkKey = $("#actFileList").find("#mKey_" + checkID).text();
+//                if ("mDeploy" == checkType) {
+//                    $.ajax(
+//                        {
+//                            url: "/Main/deployModeler?mDeID=" + checkID ,
+//                            type: "post",
+//                            async: true,
+//                            dataType: "json",
+//                            success: function () {
+//                                alert("部署成功");
+//                                $.ajax({
+//                                    url:"/Main/definitionList",
+//                                    type:"post",
+//                                    async:true,
+//                                    dataType:"json",
+//                                    success:function (data) {
+//                                        $("#definitionList").html("");
+//                                        freshDefinitionList(JSON.stringify(data));
+//                                        window.location.reload();
+//                                    }
+//                                });
+//
+//                                $.ajax({
+//                                    url:"/Main/modelerList",
+//                                    type:"post",
+//                                    async:true,
+//                                    dataType:"json",
+//                                    success:function (data) {
+//                                        $("#actFileList").html("");
+//                                        freshModelList(JSON.stringify(data));
+//                                        window.location.reload();
+//                                    }
+//                                });
+//                            },
+//                        }
+//                    );
+//                } else if ("mDelete" == checkType) {
+//                    $.ajax(
+//                        {
+//                            url:"/Main/deleteDefinition?deployID=" + checkID ,
+//                            type:"post",
+//                            async:true,
+//                            dataType:"json",
+//                            success:function () {
+//                                $.ajax(
+//                                    {
+//                                        url:"/Main/definitionList",
+//                                        type:"post",
+//                                        async:true,
+//                                        dataType:"json",
+//                                        success:function (data) {
+//                                            $("#definitionList").html("");
+//                                            freshDefinitionList(data);
+//                                            window.location.reload();
+//                                        }
+//                                    }
+//                                );
+//                            },
+//                        }
+//                    );
+//                } else {
+//
+//                }
+//            }
+//        );
+//    });
 
 
     $("#actFileList").find("button").on('click',
@@ -194,6 +200,7 @@
                                 success:function (data) {
                                     $("#definitionList").html("");
                                     freshDefinitionList(JSON.stringify(data));
+                                    window.location.reload();
                                 }
                             });
 
@@ -205,6 +212,7 @@
                                 success:function (data) {
                                     $("#actFileList").html("");
                                     freshModelList(JSON.stringify(data));
+                                    window.location.reload();
                                 }
                             });
                         },
@@ -225,7 +233,9 @@
                                     async:true,
                                     dataType:"json",
                                     success:function (data) {
-                                        freshDefinitionList(data)
+                                        $("#definitionList").html("");
+                                        freshDefinitionList(data);
+                                        window.location.reload();
                                     }
                                 }
                             );
@@ -233,7 +243,7 @@
                     }
                 );
             } else {
-
+                console.log("view");
             }
         }
     );
@@ -241,40 +251,38 @@
 <%--模型列表操作的逻辑功能--%>
 <script>
 
-    $(document).on("click", $("#definitionList").find("button"), function(){
-        $(this).find("#definitionList").find("button").on('click' , "button" , function () {
-           console.log(this);
-        });
-    });
+//    $(document).on("click", $("#definitionList").find("button"), function(){
+//        $(this).find("#definitionList").find("button").on('click' , function () {
+//           console.log(this);
+//        });
+//    });
 
     $("#definitionList").find("button").on('click',
         function () {
             var checkID = this.id.split("_")[1];
             var checkType = this.id.split("_")[0];
-            var checkName = $("#activitiFiles").find("#mName_" + checkID).text();
-            var checkKey = $("#activitiFiles").find("#mKey_" + checkID).text();
-            var checkStatus = $("#activitiFiles").find("#mVtatus_" + checkID).text();
+            var deID = $("#definitionList").find('tr').find('td').find("#deID_" + checkID).text();
+            console.log(deID);
             if ("deStart" == checkType) {
                 $.ajax(
                     {
-                        url:"/Main/deployModeler?mDeID=" + checkID ,
+                        url:"/Main/startAction?deployID=" + deID ,
                         type:"post",
                         async:true,
                         dataType:"json",
                         success:function () {
                             $.ajax(
                                 {
-                                    url:"/Main/modelerList",
+                                    url:"/Main/definitionList",
                                     type:"post",
                                     async:true,
                                     dataType:"json",
                                     success:function (data) {
                                         alert("启动成功");
-                                        freshModelList(JSON.stringify(data))
-                                    },
-                                    error:function () {
-
-                                    },
+                                        $("#actFileList").html("");
+                                        freshModelList(JSON.stringify(data));
+                                        window.location.reload();
+                                    }
                                 }
                             );
                         },
@@ -296,18 +304,31 @@
                                     async:true,
                                     dataType:"json",
                                     success:function (data) {
+                                        $("#actFileList").html("");
                                         freshModelList(JSON.stringify(data));
-                                    },
-                                    error:function () {
+                                        window.location.reload();
+                                    }
+                                }
+                            );
 
-                                    },
+                            $.ajax(
+                                {
+                                    url: "/Main/viewAction",
+                                    type: "post",
+                                    async: true,
+                                    dataType: "json",
+                                    success: function (data) {
+                                        $("#taskList").html("");
+                                        freshTaskList(JSON.stringify(data));
+                                        window.location.reload();
+                                    }
                                 }
                             );
                         }
                     }
                 );
             } else {
-
+                console.log("view");
             }
         }
     )
@@ -325,9 +346,20 @@
                     async: true,
                     dataType: "json",
                     success: function (data) {
-
-                    },
-                    error: function () {
+                        alert("执行成功");
+                        $.ajax(
+                            {
+                                url: "/Main/viewAction",
+                                type: "post",
+                                async: true,
+                                dataType: "json",
+                                success: function (data) {
+                                    $("#taskList").html("");
+                                    freshTaskList(JSON.stringify(data));
+                                    window.location.reload();
+                                }
+                            }
+                        );
                     }
                 }
             );

@@ -91,9 +91,10 @@ public class ActDemo {
     @Test
     public void startAction() {
         //act_re_procdef 表下的key字段
-        String deName = "HtmlDemo1" ;
+        String deName = "HTMLDemo1" ;
         ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
-        ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceByKey(deName);
+        ProcessInstance processInstance = processEngine.getRuntimeService().startProcessInstanceById("7533");
+//                .startProcessInstanceByKey(deName);
         System.out.println(processInstance);
         System.out.println("-------------------------------------------------------------------------------");
     }
@@ -105,19 +106,26 @@ public class ActDemo {
         List<Task> taskList = processEngine
                 .getTaskService()
                 .createTaskQuery()
+                .processDefinitionKey("HTMLDemo1")
 //                .taskCandidateOrAssigned(userAss)
                 .list();
-        System.out.println(taskList);
-        System.out.println("-------------------------------------------------------------------------------");
+
+        for(Task task : taskList){
+            System.err.println("ID:" + task.getId() + "\t" +
+                            "Name:" + task.getName() + "\t" +
+                            "DeID:" + task.getProcessDefinitionId() + "\t" +
+                            "DeKey:" + task.getTaskDefinitionKey() + "\t");
+        }
+        System.err.println("-------------------------------------------------------------------------------");
     }
 
     @Test
     public void executeAction() {
-        String taskID = "150004" ;
+        String taskID = "15004" ;
         ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
         processEngine.getTaskService()
                 .complete(taskID);
-        System.out.println("-------------------------------------------------------------------------------");
+        System.err.println("-------------------------------------------------------------------------------");
     }
 
 
@@ -137,7 +145,7 @@ public class ActDemo {
 
     @Test
     public void modelList(){
-        List<Model> list1 = repositoryService.createModelQuery().notDeployed().orderByModelVersion().asc().list();
+        List<Model> list1 = repositoryService.createModelQuery().orderByModelVersion().asc().list();
         for(Model model : list1){
             System.err.println("MDeID:" + model.getDeploymentId() +
                     "\t" + "MName:" + model.getName() +
@@ -150,7 +158,7 @@ public class ActDemo {
 
     @Test
     public void deployModel(){
-        String modelId = "110001" ;
+        String modelId = "1" ;
         try {
             Model modelData = repositoryService.getModel(modelId);
             ObjectNode modelNode = (ObjectNode) new ObjectMapper().readTree(repositoryService.getModelEditorSource(modelData.getId()));

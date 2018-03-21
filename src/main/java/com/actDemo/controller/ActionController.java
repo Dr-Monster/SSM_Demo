@@ -2,6 +2,7 @@ package com.actDemo.controller;
 
 import com.actDemo.entity.TempDefinition;
 import com.actDemo.entity.TempModeler;
+import com.actDemo.entity.TempTask;
 import com.actDemo.service.ActivitiActionSer;
 import com.actDemo.service.ModelerSer;
 import com.actDemo.service.ProcessDefinitionSer;
@@ -134,15 +135,20 @@ public class ActionController {
     @RequestMapping(value = "/startAction")
     @ResponseBody
     public String startAction(HttpServletRequest request , HttpServletResponse response){
-        String actName = request.getParameter("actName");
-        ProcessInstance processInstance = activitiActionSer.startAction(actName);
-        return JSON.toJSONString(processInstance);
+        String deployID = request.getParameter("deployID");
+        ProcessInstance processInstance = activitiActionSer.startAction(deployID);
+        if(processInstance != null){
+            return JSON.toJSONString("success");
+        }else{
+            return JSON.toJSONString("fail");
+        }
+
     }
 
     @RequestMapping(value = "/viewAction")
     @ResponseBody
     public String viewAction(HttpServletRequest request , HttpServletResponse response){
-        List<String> taskList  = activitiActionSer.viewAction();
+        List<TempTask> taskList  = activitiActionSer.viewAction();
         return JSON.toJSONString(taskList) ;
     }
 

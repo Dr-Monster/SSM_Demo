@@ -38,7 +38,8 @@ public class ProcessDefinitionSerImp implements ProcessDefinitionSer {
         }
 
         List<TempDefinition> tempDefiList = new ArrayList<TempDefinition>();
-        for(ProcessDefinition pd : sortMap.values()){
+        //for(ProcessDefinition pd : sortMap.values()){
+        for(ProcessDefinition pd : processDefinitionList){
             TempDefinition tempDefi = new TempDefinition();
             tempDefi.setDeID(pd.getDeploymentId());
             tempDefi.setBpmnPath(pd.getResourceName());
